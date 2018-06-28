@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <title>Instagram v1.0.1 by Zsolt Kiraly</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/path/to/instafeed.min.js"></script>
+    <script src="js/scripts.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Instagram <span>JavaScript Instagram v1.0.1 by Zsolt Kiraly</span></h1>
+    </header>
+
+    <section class="basic-content">
+        <h2>Sed et volutpat ligula</h2>
+        <p>Donec quis lorem sit amet tortor varius consectetur. Aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dictum quam diam, sit amet iaculis ex commodo id. Maecenas vitae finibus massa. Suspendisse potenti. Donec pulvinar nunc ut elit porttitor mattis.</p>
+
+        <p>Cras non arcu quis turpis lacinia suscipit et a purus. Mauris eu maximus massa. Nam sed vestibulum orci, ut cursus neque. Fusce eget dui eros. Mauris dictum lacus a eros fermentum, eu fringilla elit scelerisque. Sed et varius mauris. Pellentesque in ligula a mi lobortis rutrum. Vestibulum ac pretium nulla. Pellentesque tempor augue at purus tincidunt, maximus semper nisl blandit.</p>
+
+        <p>Mauris fermentum elementum urna, sed blandit metus elementum at. Nullam ac dui non orci volutpat lobortis in quis libero. Duis dignissim rutrum leo ac mollis. Sed et volutpat ligula, sollicitudin porttitor elit. Maecenas faucibus molestie mauris, ut efficitur lorem placerat.</p>
+    </section>
+
+    <section class="instagram">
+        <h3 class="title">Pellentesque tempor augue at purus tincidunt</h3>
+
+        <div class="instagram-header">
+        
+            <div class="instagram-kiralyzsolt"></div>
+            
+            <div class="instagram-follow">
+                <div class="instagram-data">
+                    <span class="hash">#Zsolt Király</span>
+                    <a class="follow-link" href="https://www.instagram.com/zsoltkiraly1986/" target="_blank">Follow on Instagram</a>
+                </div>
+            </div>
+            
+        </div>
+        <div id="instafeed"></div>
+    </section>
+
+    <script>
+        var feed = new Instafeed({
+            get: 'user',
+            userId: 855401440,
+            accessToken: '855401440.1677ed0.1d473b3fab1a42ecb5dc5504da8a5751',
+            template: '<div class="instagram-content"><a class="instagram-link" href="{{link}}"><div class="instagram-img" style="background-image:url({{image}})"></div></a></div>',
+            resolution: 'standard_resolution',
+            sortBy: 'most-recent',
+            limit: 6,
+            });
+        feed.run();
+    </script>
+
+    <section class="basic-content">
+        <h2>Sed et volutpat ligula</h2>
+        <p>Donec quis lorem sit amet tortor varius consectetur. Aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dictum quam diam, sit amet iaculis ex commodo id. Maecenas vitae finibus massa. Suspendisse potenti. Donec pulvinar nunc ut elit porttitor mattis.</p>
+
+        <p>Cras non arcu quis turpis lacinia suscipit et a purus. Mauris eu maximus massa. Nam sed vestibulum orci, ut cursus neque. Fusce eget dui eros. Mauris dictum lacus a eros fermentum, eu fringilla elit scelerisque. Sed et varius mauris. Pellentesque in ligula a mi lobortis rutrum. Vestibulum ac pretium nulla. Pellentesque tempor augue at purus tincidunt, maximus semper nisl blandit.</p>
+
+        <p>Mauris fermentum elementum urna, sed blandit metus elementum at. Nullam ac dui non orci volutpat lobortis in quis libero. Duis dignissim rutrum leo ac mollis. Sed et volutpat ligula, sollicitudin porttitor elit. Maecenas faucibus molestie mauris, ut efficitur lorem placerat.</p>
+    </section>
+
+    <footer>
+        <span>GitHub:</span> <a href="https://github.com/zsoltkiraly" title="GitHub" target="_blank">https://github.com/zsoltkiraly</a>
+    </footer>
+
+</body>
+</html>
