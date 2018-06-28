@@ -107,6 +107,20 @@ var instagram = function() {
         }
     }
 
+    function loading() {
+
+        var instagram = document.querySelector('.instagram');
+
+        setTimeout(function() {
+            instagram.classList.remove('show');
+
+            setTimeout(function() {
+                instagram.classList.remove('loading');
+            }, 1000);
+
+        }, 1000);
+    }
+
     function app() {
         var instaFeed = document.querySelector('#instafeed');
 
@@ -117,8 +131,7 @@ var instagram = function() {
 
         arroundDiv(instaFeed);
         resetDiv(instaFeed);
-
-        document.querySelector('section.instagram').classList.add('load');
+        loading();
     }
 
     return {
@@ -126,7 +139,3 @@ var instagram = function() {
     }
 
 }();
-
-window.addEventListener('load', function() {
-    instagram.app();
-}, false);

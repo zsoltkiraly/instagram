@@ -32,6 +32,7 @@ body { min-width: 320px; }
 
 section.instagram {
     display: block;
+    position: relative;
     padding: 0 20px;
     max-width: 1340px;
     width: 100%;
@@ -226,55 +227,52 @@ section.instagram {
         }
     }
 
-    #instafeed { display: none; }
+    
+    #instafeed {
+        margin-left: -20px;
+        height: 400px;
+        
+        @include flex-box();
+        @include flex-wrap(wrap);
+        @include flex-direction(row);
 
-    &.load {
-        #instafeed {
-            margin-left: -20px;
+        .instagram-content {
+            width: 33.5%;
             height: 400px;
-            
-            @include flex-box();
-            @include flex-wrap(wrap);
-            @include flex-direction(row);
+            padding-left: 20px;
 
-            .instagram-content {
-                width: 33.5%;
+            a.instagram-link,
+            a.instagram-link .instagram-img {
+                display: block;
+                width: 100%;
                 height: 400px;
-                padding-left: 20px;
-
-                a.instagram-link,
-                a.instagram-link .instagram-img {
-                    display: block;
-                    width: 100%;
-                    height: 400px;
-                }
-
-                a.instagram-link .instagram-img {
-                    background-repeat: no-repeat;
-
-                    @include background-size(cover);
-                    background-position: center center;
-                }
             }
 
-            .two {
-                width: 16.5%;
-                padding-left: 20px;
+            a.instagram-link .instagram-img {
+                background-repeat: no-repeat;
 
-                .instagram-content {
-                    display: block;
-                    width: 100%;
+                @include background-size(cover);
+                background-position: center center;
+            }
+        }
+
+        .two {
+            width: 16.5%;
+            padding-left: 20px;
+
+            .instagram-content {
+                display: block;
+                width: 100%;
+                height: 190px;
+                padding-left: 0;
+
+                &,
+                a.instagram-link,
+                a.instagram-link .instagram-img {
                     height: 190px;
-                    padding-left: 0;
-
-                    &,
-                    a.instagram-link,
-                    a.instagram-link .instagram-img {
-                        height: 190px;
-                    }
-
-                    &:first-child { margin-bottom: 20px; }
                 }
+
+                &:first-child { margin-bottom: 20px; }
             }
         }
     }
@@ -325,4 +323,49 @@ section.instagram {
             }
         }
     }
+
+    &.loading {
+
+        &:after,
+        &:before {
+            @include opacity(0);
+            @include transition (opacity .5s ease-in-out);
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            display: inline-block;
+            left: calc(50% - 15px);
+            top: 50%;
+            z-index: 100;
+
+            @include loader($blue, $gray, .3s, 6px, 30px, 30px);
+            @include translate(-50%, -50%);
+            @include background-size(cover);
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            z-index: 99;
+            background-color: white;
+        }
+    }
+
+    &.loading.show {
+        height: 100%;
+        max-height: 300px;
+        overflow: hidden;
+        
+        &:after,
+        &:before {
+            @include opacity(1);
+        }
+    }
+
 }

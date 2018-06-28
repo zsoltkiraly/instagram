@@ -27,7 +27,7 @@
         <p>Mauris fermentum elementum urna, sed blandit metus elementum at. Nullam ac dui non orci volutpat lobortis in quis libero. Duis dignissim rutrum leo ac mollis. Sed et volutpat ligula, sollicitudin porttitor elit. Maecenas faucibus molestie mauris, ut efficitur lorem placerat.</p>
     </section>
 
-    <section class="instagram">
+    <section class="instagram loading show">
         <h3 class="title">Pellentesque tempor augue at purus tincidunt</h3>
 
         <div class="instagram-header">
@@ -56,6 +56,11 @@
             limit: 6,
             });
         feed.run();
+
+        window.addEventListener('load', function() {
+            instagram.app();
+        }, false);
+
     </script>
 
     <section class="basic-content">
