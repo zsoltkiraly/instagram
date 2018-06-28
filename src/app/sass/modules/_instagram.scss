@@ -226,7 +226,6 @@ section.instagram {
             }
         }
     }
-
     
     #instafeed {
         margin-left: -20px;
@@ -280,46 +279,42 @@ section.instagram {
     @media screen and (max-width: $tablet) {
         height: auto;
 
-        &.load {
-            #instafeed {
-                height: auto;
+        #instafeed {
+            height: auto;
 
-                .instagram-content {
-                    width: 50%;
-                    margin-bottom: 20px;
-                    height: 300px;
+            .instagram-content {
+                width: 50%;
+                margin-bottom: 20px;
+                height: 300px;
 
-                    a.instagram-link,
-                    a.instagram-link .instagram-img {
-                        width: 100%;
-                        position: relative;
-                        display: block;
-                        height: 100%;
-                    }
+                a.instagram-link,
+                a.instagram-link .instagram-img {
+                    width: 100%;
+                    position: relative;
+                    display: block;
+                    height: 100%;
                 }
             }
         }
     }
 
     @media screen and (max-width: $mobile) {
-        &.load {
-            #instafeed {
-                margin-left: 0;
+        #instafeed {
+            margin-left: 0;
 
-                .instagram-content {
+            .instagram-content {
+                width: 100%;
+                height: 320px;
+                padding: 0;
+
+                a.instagram-link,
+                a.instagram-link .instagram-img {
                     width: 100%;
-                    height: 320px;
-                    padding: 0;
-
-                    a.instagram-link,
-                    a.instagram-link .instagram-img {
-                        width: 100%;
-                        position: relative;
-                        display: block;
-                        background-position: center center;
-                    }
-                    &:last-of-type { margin-bottom: 0; }
+                    position: relative;
+                    display: block;
+                    background-position: center center;
                 }
+                &:last-of-type { margin-bottom: 0; }
             }
         }
     }
