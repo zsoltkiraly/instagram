@@ -75,7 +75,7 @@ var instagram = function() {
     }
 
     function resetDiv(iF) {
-        if (window.matchMedia("only screen and (max-width: 998px)").matches) {
+        if (window.matchMedia('only screen and (max-width: 998px)').matches) {
             var two = iF.querySelectorAll('.two');
 
             var i = 0,
