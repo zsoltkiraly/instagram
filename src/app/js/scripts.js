@@ -45,7 +45,7 @@ var instagram = function() {
     });
 
     function arroundDiv(iF) {
-        if (window.matchMedia("only screen and (min-width: 999px)").matches) {
+        if (window.matchMedia('only screen and (min-width: 999px)').matches) {
 
             var iImage =iF.querySelectorAll('.instagram-content:nth-child(3n)');
             var two = iF.querySelectorAll('.two');
