@@ -1,7 +1,9 @@
 # Instagram v1.0.1
 
 <br />
-<a href="https://zsoltkiraly.com/developments/instagram/" target="_blank">DEMO PAGE</a>
+<a href="https://zsoltkiraly.com/developments/instagram/" target="_blank">DEMO PAGE</a><br /><br />
+
+<img src="http://zsoltkiraly.com/developments/_images/instagram-001.jpg">
 
 #
 <br />
