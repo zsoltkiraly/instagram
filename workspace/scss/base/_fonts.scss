@@ -1,0 +1,28 @@
+@font-face {
+    font-family: "instagram";
+    src: url("../fonts/instagram.eot?9oo1wq");
+    src: url("../fonts/instagram.eot?9oo1wq#iefix") format("embedded-opentype"), url("../fonts/instagram.ttf?9oo1wq") format("truetype"), url("../fonts/instagram.woff?9oo1wq") format("woff"), url("../fonts/instagram.svg?9oo1wq#instagram") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+    font-family: "instagram" !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-image:before {
+    content: "\e900";
+}
+
+.icon-user:before {
+    content: "\e901";
+}

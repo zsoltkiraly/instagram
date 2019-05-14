@@ -1,0 +1,358 @@
+section.instagram-open-graph {
+  display: block;
+  width: 100%;
+  max-width: 1340px;
+  padding: 40px 15px 20px;
+  margin: 0 auto;
+  height: auto;
+  overflow: hidden;
+
+  h3.title {
+    color: black;
+    margin: 0 0 40px;
+    padding: 0;
+    font-weight: 700;
+    font-size: 2.3em;
+    line-height: 1;
+    width: 100%;
+    text-align: center;
+  }
+
+  .instagram-header {
+    position: relative;
+    clear: both;
+    min-height: 50px;
+    height: 100%;
+    margin-bottom: 20px;
+
+    @include flex-box();
+    @include align-items(center);
+    @include justify-content(center);
+    @include flex-wrap(wrap);
+
+    .instagram-user,
+    .instagram-follow {
+      position: relative;
+
+      @include flex(0 0 50%);
+    }
+
+    .instagram-user {
+      padding-left: 60px;
+      color: black;
+      font-size: 0.93em;
+
+      &:before,
+      &:after {
+        top: 50%;
+
+        @include translateY(-50%);
+      }
+
+      &:before {
+        content: "k";
+        position: absolute;
+        z-index: 2;
+        left: 16px;
+        color: white;
+        font-size: 2.5em;
+        top: 48%;
+        font-weight: bold;
+      }
+
+      &:after {
+        content: "";
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        text-align: center;
+        background-color: $blue;
+
+        @include border-radius(50%);
+      }
+
+      .full-name {
+        font-size: 1.14em;
+        font-weight: 700;
+        padding-right: 11px;
+        text-transform: lowercase;
+      }
+
+      span.media,
+      span.followed,
+      span.bio,
+      i.icon-image,
+      i.icon-user-insta {
+        font-size: 0.93em;
+      }
+
+      i.icon-image { display: inline-block; }
+      span.media { padding-right: 8px; display: inline-block; }
+      span.bio { position: relative; top: 5px; }
+    }
+
+    .instagram-follow {
+
+      .instagram-data {
+        position: relative;
+        text-align: right;
+
+        @include flex-box();
+        @include align-items(center);
+        @include justify-content(flex-end);
+        @include flex-wrap(wrap);
+
+        span.hash,
+        a.follow-link {
+          position: relative;
+          display: inline-block;
+
+          @include flex(0 0 auto);
+        }
+
+        span.hash { font-size: 1.715em; padding-right: 35px; }
+
+        a.follow-link {
+          padding: 12px 25px;
+          background-color: $blue;
+          color: white;
+          font-weight: 500;
+          font-size: 0.86em;
+          text-decoration: none;
+          text-align: center;
+
+          @include border-radius(2px);
+          @include transition(background-color 0.3s ease);
+
+          &:hover { text-decoration: none; background-color: $blue; }
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: $tablet) {
+    padding: 20px 15px 20px;
+
+    h3.title { margin: 0 0 30px; font-size: 1.78em; }
+
+    .instagram-header {
+      .instagram-follow {
+        .instagram-data {
+
+          span.hash { font-size: 1.3em; padding-right: 20px; }
+          a.instagram-follow { padding: 10px 20px; font-size: 0.71em; }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    padding: 20px 15px 20px;
+
+    .instagram-header {
+      @include full-block();
+
+      .instagram-user,
+      .instagram-follow {
+        width: 100%;
+        display: block;
+      }
+
+      .instagram-user {
+        span.media,
+        span.followed,
+        span.bio,
+        i.icon-image,
+        i.icon-user-insta {
+          font-size: 0.78em;
+        }
+      }
+
+      .instagram-follow {
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid $gray;
+      }
+
+      .instagram-follow {
+        .instagram-data {
+
+          @include justify-content(flex-start);
+
+          span.hash { font-size: 1.1em; padding-right: 15px; }
+          a.instagram-follow { padding: 8px 18px; font-size: 0.61em; }
+        }
+      }
+    }
+  }
+
+  .instagram-content {
+    display: grid;
+    grid-gap: 20px;
+    height: 400px;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: [first] calc(30% - 15px) [line2] calc(20% - 15px) [line3] calc(30% - 15px) [col4-start] calc(20% - 15px) [end];
+
+    .instagram-media {
+      a {
+        height: 100%;
+        overflow: hidden;
+        color: white;
+
+        @include full-block();
+
+        img,
+        video {
+          position: relative;
+          min-width: 100%;
+          min-height: 100%;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        .caption {
+          position: absolute;
+          top: 100%;
+          width: 100%;
+          height: 100%;
+          display: block;
+          padding: 40px;
+          background-color: rgba(0, 0, 0, 0.6);
+
+          @include opacity(0);
+          @include flex-box();
+          @include align-items(flex-end);
+          @include transition(top 0.3s ease-out, opacity 0.8s ease);
+
+          p {
+            font-size: 1em;
+            line-height: 1.6;
+            margin-bottom: 0;
+          }
+        }
+
+        &:hover {
+          text-decoration: none;
+
+          .caption { top: 0; @include opacity(1); }
+        }
+      }
+
+      &:nth-of-type(1),
+      &:nth-of-type(3) {
+        grid-row: span 6;
+      }
+
+      &:nth-of-type(2),
+      &:nth-of-type(4),
+      &:nth-of-type(5),
+      &:nth-of-type(6) {
+        grid-row: span 3;
+        display: block;
+
+        a {
+          .caption { padding: 10px 15px; font-size: 0.8em; }
+        }
+      }
+    }
+
+    @media screen and (max-width: $tablet) {
+      height: auto;
+      margin-left: -20px;
+      grid-template-rows: none;
+      grid-template-columns: none;
+
+      @include flex-box();
+      @include align-items(stretch);
+      @include flex-wrap(wrap);
+
+      .instagram-media {
+        &:nth-of-type(1),
+        &:nth-of-type(2),
+        &:nth-of-type(3),
+        &:nth-of-type(4),
+        &:nth-of-type(5),
+        &:nth-of-type(6) {
+          grid-row: none;
+
+          a {
+            img { height: 300px; }
+            .caption { padding: 40px; font-size: 1em; }
+          }
+        }
+
+        margin-left: 20px;
+        margin-bottom: 20px;
+
+        @include flex(0 0 calc(50% - 20px));
+      }
+    }
+
+    @media screen and (max-width: $mobile) {
+      margin-left: 0;
+
+      .instagram-media { margin-left: 0; @include flex(0 0 100%); }
+    }
+    &.simple {
+      margin-left: -20px;
+      height: auto;
+  
+      @include flex-box();
+      @include align-items(center);
+      @include flex-wrap(wrap);
+  
+      @media screen and (max-width: $tablet) { margin-left: 0; }
+  
+      .instagram-media {
+        height: 250px;
+        margin-left: 20px;
+        overflow: hidden;
+        margin-bottom: 20px;
+  
+        @include flex(0 0 calc(33.3333% - 20px));
+        @include border-radius(4px);
+  
+        @media screen and (max-width: $tablet) { margin-left: 0; height: auto; @include flex(0 0 100%); }
+  
+        a {
+          overflow: hidden;
+          display: block;
+          position: relative;
+          color: white;
+  
+          img, video {
+            max-width: 100%;
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+  
+            @media screen and (max-width: $tablet) { height: 300px; }
+          }
+  
+          .caption {
+            position: absolute;
+            top: 100%;
+            width: 100%;
+            height: 100%;
+            display: block;
+            padding: 40px;
+            background-color: rgba(0, 0, 0, 0.6);
+            
+            @include opacity(0);
+            @include flex-box();
+            @include align-items(flex-end);
+            @include transition(top .3s ease-out, opacity .8s ease);
+  
+            p { font-size: 1em; line-height: 1.6; margin-bottom: 0; }
+          }
+  
+          &:hover {
+            .caption { top: 0; @include opacity(1); }
+          }
+        }
+      }
+    }
+  }
+}
